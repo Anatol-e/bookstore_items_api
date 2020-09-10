@@ -1,6 +1,7 @@
 package app
 
 import (
+	"fmt"
 	"github.com/gorilla/mux"
 	"net/http"
 )
@@ -16,6 +17,8 @@ func StartApplication() {
 		Handler: router,
 		Addr:    "127.0.0.1:8080",
 	}
+
+	fmt.Println("listening...")
 
 	if err := srv.ListenAndServe(); err != nil {
 		panic(err)
